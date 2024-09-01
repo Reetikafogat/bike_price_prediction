@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+</head>
+<body>
+    <div id="cls">
+        <form action="{{ url_for('predict') }}" method='post' id="formm">
+            <h2 id="main_h"><ul>Old Bikes Price Prediction 😊</ul></h2><br><br>
+            <p id="par"><b>Select Your Bike</b></p>
+
+            <select name="brand_name" id="fifth" required="required">
+                <option value="2">Royal Enfield</option>
+                <option value="7">KTM</option>
+                <option value="1">Bajaj</option>
+                <option value="9">Harley-Davidson</option>
+                <option value="5">Yamaha</option>
+                <option value="4">Honda</option>
+                <option value="8">Suzuki</option>
+                <option value="6">TVS</option>
+                <option value="10">Kawasaki</option>
+                <option value="11">Hyosung</option>
+                <option value="13">Benelli</option>
+                <option value="12">Mahindra</option>
+                <option value="14">Triumph</option>
+                <option value="15">Ducati</option>
+                <option value="16">BMW</option>
+            </select><br><br>
+
+            <p id="par"><b>What kms.. driven bike</b></p>
+            <input name="Kms_Driven" type="number" id="first" required="required"><br><br>
+
+            <p id="par"><b>How many owners used this bike</b></p>
+            <input name="owner" type="number" id="second" required="required"><br><br>
+
+            <p id="par"><b>How many years used this bike</b></p>
+            <input type="number" name="age" id="third" required="required"><br><br>
+
+            <p id="par"><b>What is the power of the bike (CC)</b></p>
+            <input type="number" name="power" id="forth" required="required"><br><br>
+
+            <button type="submit" id="btn">CLICK ME</button>
+
+            <br><br>
+            <h3 id="pred">Bike 🏍 price will be around 👉 {{ prediction_text }}</h3>
+        </form>
+        <br>
+    </div> 
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(rgba(215, 189, 240, 0.8), rgba(215, 189, 240, 0.8)), url('static/images/bike_image.jpg');
+            background-size: cover;
+            background-position: right center;
+            background-attachment: fixed;
+            height: 100vh;
+        }
+
+        #cls {
+            color: rgb(80, 78, 77);
+            background-color: rgba(202, 173, 231, 0.9); /* Semi-transparent background */
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 600px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #main_h {
+            color: rgb(44, 46, 43);
+            font-size: 30px;
+            box-shadow: 2px 8px 5px rgb(95, 93, 93);
+        }
+
+        input, select {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+            box-shadow: 2px 8px 5px rgb(95, 93, 93);
+            border: solid rgb(44, 46, 43);
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        #btn {
+            border: 3px solid black;
+            border-radius: 50px;
+            background-color: rgb(105, 104, 102);
+            width: 210px;
+            height: 35px;
+            font-size: 15px;
+            color: whitesmoke;
+            box-shadow: 2px 8px 5px rgb(95, 93, 93);
+            display: block;
+            margin: 0 auto;
+        }
+
+        #btn:hover {
+            background-color: rgb(240, 238, 230);
+            color: rgb(19, 18, 18);
+            border-color: transparent;
+            box-shadow: 2px 8px 5px rgb(20, 20, 20);
+        }
+
+        #pred {
+            margin-left: 10px;
+            color: rgb(19, 18, 18);
+        }
+    </style>
+</body>
+</html>
+
+
+    
